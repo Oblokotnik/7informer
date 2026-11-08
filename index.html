@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messenger</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Экран авторизации -->
+    <div id="auth-screen" class="screen">
+        <div class="auth-container">
+            <h1 class="logo">Messenger</h1>
+            
+            <div id="login-form" class="form-section">
+                <h2>Вход</h2>
+                <input type="text" id="login-nickname" placeholder="Никнейм">
+                <input type="password" id="login-password" placeholder="Пароль">
+                <button onclick="login()" class="btn-primary">Войти</button>
+                <p class="switch-form">Нет аккаунта? <a href="#" onclick="showRegister()">Регистрация</a></p>
+            </div>
+            
+            <div id="register-form" class="form-section" style="display:none;">
+                <h2>Регистрация</h2>
+                <input type="text" id="reg-nickname" placeholder="Никнейм">
+                <input type="password" id="reg-password" placeholder="Пароль">
+                <input type="password" id="reg-password-confirm" placeholder="Повторите пароль">
+                <button onclick="register()" class="btn-primary">Создать аккаунт</button>
+                <p class="switch-form">Уже есть аккаунт? <a href="#" onclick="showLogin()">Войти</a></p>
+            </div>
+            
+            <div id="auth-error" class="error-message"></div>
+        </div>
+    </div>
+
+    <!-- Основной экран -->
+    <div id="main-screen" class="screen" style="display:none;">
+        <div class="header">
+            <h1 class="logo-small">Messenger</h1>
+            <div class="user-info">
+                <span id="current-user-name"></span>
+                <button onclick="logout()" class="btn-logout">Выйти</button>
+            </div>
+        </div>
+        
+        <div class="main-container">
+            <!-- Список пользователей -->
+            <div class="sidebar">
+                <h3>Пользователи</h3>
+                <div id="users-list"></div>
+            </div>
+            
+            <!-- Чат -->
+            <div class="chat-area">
+                <div id="chat-header" class="chat-header">Выберите пользователя</div>
+                <div id="messages-container" class="messages-container"></div>
+                <div class="message-input-area">
+                    <input type="text" id="message-input" placeholder="Введите сообщение..." onkeypress="handleKeyPress(event)">
+                    <button onclick="sendMessage()" class="btn-send">Отправить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
