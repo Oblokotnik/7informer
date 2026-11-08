@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
+    background-color: #e9ebee;
+    color: #1c1e21;
+}
+
+/* Экраны */
+.screen {
+    width: 100%;
+    height: 100vh;
+}
+
+/* Авторизация */
+.auth-container {
+    max-width: 400px;
+    margin: 100px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+    color: #3b5998;
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.form-section h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #dddfe2;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3b5998;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 10px;
+    background-color: #3b5998;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #344e86;
+}
+
+.switch-form {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+.switch-form a {
+    color: #3b5998;
+    text-decoration: none;
+}
+
+.error-message {
+    color: #ff0000;
+    margin-top: 10px;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* Основной экран */
+.header {
+    background-color: #3b5998;
+    color: white;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo-small {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-logout {
+    padding: 6px 15px;
+    background-color: #fff;
+    color: #3b5998;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-logout:hover {
+    background-color: #f0f0f0;
+}
+
+.main-container {
+    display: flex;
+    height: calc(100vh - 60px);
+}
+
+/* Sidebar */
+.sidebar {
+    width: 300px;
+    background: white;
+    border-right: 1px solid #dddfe2;
+    overflow-y: auto;
+}
+
+.sidebar h3 {
+    padding: 15px;
+    background-color: #f5f6f7;
+    border-bottom: 1px solid #dddfe2;
+    color: #333;
+}
+
+.user-item {
+    padding: 12px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+}
+
+.user-item:hover {
+    background-color: #f0f2f5;
+}
+
+.user-item.active {
+    background-color: #e7f3ff;
+    border-left: 3px solid #3b5998;
+}
+
+.user-name {
+    font-weight: bold;
+    color: #3b5998;
+}
+
+/* Chat area */
+.chat-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: white;
+}
+
+.chat-header {
+    padding: 15px 20px;
+    background-color: #f5f6f7;
+    border-bottom: 1px solid #dddfe2;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+.messages-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.message {
+    margin-bottom: 12px;
+    max-width: 70%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.message.sent {
+    background-color: #3b5998;
+    color: white;
+    margin-left: auto;
+    border-bottom-right-radius: 2px;
+}
+
+.message.received {
+    background-color: #f0f2f5;
+    color: #1c1e21;
+    margin-right: auto;
+    border-bottom-left-radius: 2px;
+}
+
+.message-time {
+    font-size: 11px;
+    opacity: 0.7;
+    margin-top: 4px;
+}
+
+.message-input-area {
+    padding: 15px 20px;
+    border-top: 1px solid #dddfe2;
+    display: flex;
+    gap: 10px;
+    background-color: #f5f6f7;
+}
+
+#message-input {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #dddfe2;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.btn-send {
+    padding: 10px 20px;
+    background-color: #3b5998;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-send:hover {
+    background-color: #344e86;
+}
+
+.typing-indicator {
+    font-style: italic;
+    color: #999;
+    font-size: 12px;
+    padding: 5px 20px;
+}
